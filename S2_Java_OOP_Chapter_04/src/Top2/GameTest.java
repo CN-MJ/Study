@@ -9,13 +9,15 @@ import java.util.Scanner;
 
 public class GameTest {
     static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
         boolean check;
         do {
             check = menu();
-        }while (check);
+        } while (check);
     }
-    public static boolean menu(){
+
+    public static boolean menu() {
         System.out.println("请选择鸟类型："
                 + "1.炸弹鸟"
                 + "2.喷火分裂鸟"
@@ -25,8 +27,8 @@ public class GameTest {
         );
         int userInput = scanner.nextInt();
         boolean check = false;
-        Bird bird =null;
-        switch (userInput){
+        Bird bird = null;
+        switch (userInput) {
             case 1:
                 bird = new BombBird();
                 check = true;
@@ -49,7 +51,7 @@ public class GameTest {
                 break;
             case 5:
                 break;
-            default:{
+            default: {
                 System.out.println("请输入正确的选项");
             }
         }

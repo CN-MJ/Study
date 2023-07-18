@@ -20,7 +20,7 @@ public abstract class  Bird {
         attack();
     }
 
-    public void twitter(){
+        public void twitter(){
         System.out.println("嗷嗷叫");
     }
     public abstract void attack();
