@@ -14,7 +14,7 @@ public class Test {
         System.out.println("包含RUS的key吗"+map.containsKey("RUS"));
         System.out.println("包含RUS的key吗"+map.containsKey("RUS"));
         Set<String> keySet = map.keySet();
-        Collection listValues = map.values();
+        Collection<String> listValues = map.values();
         System.out.println(keySet);
         System.out.println(listValues);
         System.out.println(map);

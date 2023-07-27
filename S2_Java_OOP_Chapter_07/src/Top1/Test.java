@@ -29,9 +29,9 @@ public class Test {
             System.out.print(dog.getVariety());
         }
         System.out.println();
-        for (int i = 0; i < list.size(); i++) {
-            Dog dog = (Dog) list.get(i);
-            System.out.print(dog.getName()+"\t");
+        for (Object o : list) {
+            Dog dog = (Dog) o;
+            System.out.print(dog.getName() + "\t");
             System.out.print(dog.getVariety());
 
         }
