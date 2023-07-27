@@ -22,10 +22,9 @@ public class Test {
         System.out.println(list.size());
 
 
-        Iterator iterator = list.iterator();
-        while (iterator.hasNext()){
-            Dog dog = (Dog)iterator.next();
-            System.out.print(dog.getName()+"\t");
+        for (Object value : list) {
+            Dog dog = (Dog) value;
+            System.out.print(dog.getName() + "\t");
             System.out.print(dog.getVariety());
         }
         System.out.println();

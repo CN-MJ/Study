@@ -10,7 +10,7 @@ public class Test {
         Top2.Dog dog3 = new Top2.Dog("为人体", "的风格和");
         Top2.Dog dog5 = new Top2.Dog("肉体与", "阿斯蒂芬");
         Top2.Dog dog4 = new Top2.Dog("从v下班", "肉体与");
-        LinkedList<Dog> list = new LinkedList<Dog>();
+        LinkedList<Dog> list = new LinkedList<>();
         list.add(dog1);
         list.add(dog2);
         list.add(dog3);
@@ -22,10 +22,8 @@ public class Test {
         System.out.println("最后一条狗"+dogLast.getName());
         System.out.println("还有"+list.size()+"条狗");
         System.out.println("分别是");
-        Iterator<Dog> iterator = list.iterator();
-        while (iterator.hasNext()){
-            Top2.Dog dog = iterator.next();
-            System.out.println(dog.getName()+"\t"+dog.getVariety());
+        for (Dog dog : list) {
+            System.out.println(dog.getName() + "\t" + dog.getVariety());
         }
     }
 }
