@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="ON">
+    <appenders>
+        <!-- 输出日志到控制台的配置 -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%l] %-5level - %msg%n"/>
+        </Console>
+
+        <!-- 输出日志到文件的配置 -->
+        <File name="log" fileName="log/log1.log" append="true">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%l] %-5level - %msg%n"/>
+        </File>
+
+        <!-- 滚动文件日志记录器的配置 -->
+        <RollingFile name="RollingFile" fileName="logs/application.log"
+                     filePattern="logs/application-%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] %logger{36} - %msg%n"/>
+            <Policies>
+                <!-- 每天创建一个新的日志文件 -->
+                <TimeBasedTriggeringPolicy />
+                <!-- 按照文件大小进行日志文件的滚动 -->
+                <SizeBasedTriggeringPolicy size="10MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="10" />
+        </RollingFile>
+    </appenders>
+
+    <loggers>
+        <!-- 根日志记录器 -->
+        <root level="all">
+            <appender-ref ref="Console"/>
+            <appender-ref ref="log"/>
+            <appender-ref ref="RollingFile"/>
+        </root>
+        <!-- 添加异常记录器 -->
+        <logger name="java.lang.Exception" level="error" additivity="false">
+            <appender-ref ref="log"/>
+        </logger>
+    </loggers>
+</configuration>
